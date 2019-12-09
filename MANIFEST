@@ -2,6 +2,6 @@
 README
 setup.cfg
 setup.py
-otus-search/__init__.py
-otus-search/page.py
-otus-search/search.py
+otus_search/__init__.py
+otus_search/page.py
+otus_search/search.py

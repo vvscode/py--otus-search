@@ -1,11 +1,13 @@
+#!/usr/bin/python3
 import argparse
 import logging
 import os
 
-from page import Page, YandexSerp, GoogleSerp
+from .page import Page, YandexSerp, GoogleSerp
 
 LOGLEVEL = os.environ.get("LOGLEVEL", "WARNING").upper()
 logging.basicConfig(level=LOGLEVEL)
+
 
 def get_args():
     parser = argparse.ArgumentParser(description="Search script")
@@ -19,8 +21,8 @@ def get_args():
     args = parser.parse_args()
     return args
 
-
-def main(params):
+def main():
+    params = get_args()
     logging.debug(f"Main: {params}")
     if params.start not in ["google", "yandex"]:
         raise Exception(f"`{params.start}` is unknown start point")
@@ -47,9 +49,8 @@ def main(params):
     print("\n".join(links[: params.num]))
     print(f'{len(links)} links')
 
-
 if __name__ == "__main__":
     try:
-        main(get_args())
+        main()
     except Exception as e:
         print("Something went wrong: ", e)
