@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'otus_search',
   packages = ['otus_search'],
-  version = '0.0.1',
+  version = '0.0.3',
   license='MIT',
   description = 'Search links from web',
   author = 'vvscode',
